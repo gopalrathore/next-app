@@ -3,54 +3,56 @@ import Name from "../components/Name";
 import styles from "../css/Index.css";
 import Head from "next/head";
 import Link from "next/link";
+// import myData from '../components/data.json';
 
 class Index extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      name: "gopal state"
+    }
+
+  }
+
+  componentWillMount(){
+    let data;
+    if(true){
+      data = require('../components/data.json');
+    }
+    console.log("myData here",data);
+  }
+  componentDidMount() {
+
+    console.log("success gopal", this.state);
+    
+    $(document).ready(function() {
+      console.log("jquery worked");
+      $("p").click(function() {
+        console.log("worked");
+      });
+    });
+  }
   render() {
     return (
       <div className="container-fluid">
         <Head>
           <title>This page has a title 🤔</title>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous"
-          />
-          <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-          />
-          <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"
-          />
-          <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"
-          />
         </Head>
 
         <div className="row">
           <div className="col-md-4">
-          <ul>
-      <li>
-      <Link href="/about">
-              <a>about page</a>
-            </Link>
-      </li>
-    </ul>
+            <ul>
+              <li>
+                <Link href="/about">
+                  <a>about page</a>
+                </Link>
+              </li>
+            </ul>
           </div>
-        
         </div>
         <h1 className={styles.color}>Hello</h1>
+        <p>Gopal click here</p>
         <Name name="Gopal" />
         <div className="row">
           <div className="col-md-12">
