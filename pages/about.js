@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/about.css";
+import Nav from '../components/navbar/nav'
 
 class About extends Component {
   constructor(props) {
@@ -134,6 +135,7 @@ class About extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <div className="img-container" />
       </div>
     );
